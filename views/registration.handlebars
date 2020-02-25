@@ -1,0 +1,32 @@
+<section class="signup">
+  <h1>Create Account  </h1>
+
+
+  <div>{{#each messages}}
+    <div class="errors">{{this}}</div>
+    {{/each}}
+  </div>
+  <br>
+  <br>
+  <form class="logintext" action="/validation-registration" method="post">
+    <label>Email Address</label>
+    <input type="email" name="email" placeholder="Email Address">
+    <label>Password(6-20 characters)</label>
+    <input type="password" name="pass" placeholder="Password">
+    <label>Re-Password(6-20 characters)</label>
+    <input type="password" name="repass" placeholder="Re-enter Password">
+    <label>First Name</label>
+    <input type="text" name="firstName" placeholder="First Name">
+    <label>Last Name</label>
+    <input type="text" name="lastName" placeholder="Last Name">
+    <label>Phone Number</label>
+    <input type="text" name="phoneNumber" placeholder="Phone Number">
+    <label>Birthday</label>
+    <input type="date" name="birthday" placeholder="Birthday">
+    <br>
+    <br>
+    <br>
+    <input type="submit" name="submit" value="Create Account" class="signupbtn">
+  </form>
+
+</section>

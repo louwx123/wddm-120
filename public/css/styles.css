@@ -1,0 +1,380 @@
+*{
+    font-family: "Roboto",sans-serif;
+    text-decoration: none;
+}
+
+del { 
+  text-decoration: line-through;
+}
+a{
+  color: inherit;
+}
+/* header */
+.header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1;
+  border-bottom: solid black 1px;
+}
+
+.logo{
+  text-align: center;
+  height:5em;
+  width: 5em;
+  padding: 0.8em;
+  margin-left: 2em;
+}
+
+.topbar{
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr
+
+}
+
+.topbar ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  list-style-type: none;
+  font-size: 1.2em;
+  background-color: #87ceeb;
+  color: #111111;
+  border-radius: 1em ;
+  margin: 1em;
+  padding:1.2em 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.btnlist button{
+  padding: 1em;
+  margin: 1em 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+  
+.btnlist button:hover {
+  opacity: 0.8;
+}
+
+.btnlist ul{
+  position: absolute;
+  background-color:inherit;
+  padding-left: 1em;
+}
+
+.btnlist button{
+  font-size: 1em;
+  margin-top: -1em;
+}
+.topbar li a:hover {
+  border: soild cornflowerblue 1px;
+  color: white;
+}
+
+.signup{
+  margin: 10em;
+  position: relative;
+}
+
+.signupbtn{
+  position: absolute;
+  text-align: center;
+  border: solid #0562e8 1px;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  font-size: 1.2em;
+  background-color: white;
+}
+
+.signupbtn:hover{
+  background-color: #0562e8;
+  color: white;
+}
+main{
+  margin-top: 9em;
+}
+
+.searchbtn{
+  border-radius: 0.2em;
+  min-width: 100px;
+  border: 0.2em solid #0562e8;
+  font-size: 1.5em;
+  color: white;
+  background: #0562e8;
+  padding: 0.5em 1.5em;
+}
+
+.searchbtn:hover{
+  color: #0562e8;
+  background: white;
+
+}
+
+.part{
+  margin-top: 3em;
+  margin-left: 10em;
+  color: #444444;
+
+}
+
+
+/* footer */
+.foot{
+  display: grid;
+  grid-template-columns: 2fr 4fr 1fr 2fr;
+  background-color:#87ceeb;
+  color: white;
+  }
+.icons{
+  text-align: left;
+  display: block;
+
+}
+.icons ul li{
+  color: white;
+  display: inline-block;
+  margin: 0 1em;
+}
+
+.foot label{
+    padding:1em;
+    text-align: right;
+}
+
+/* Homepage */
+.background{
+  background: url('/images/background.jpg');
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+
+ 
+  position: relative;
+
+}
+
+.container{
+  position: absolute;
+  padding: 2em;
+  top: 6em;
+  left: 10em;
+  background-color: white;
+  border-radius: 0.2em;
+  width: 30em ;
+}
+
+.heading{
+  font-size: 1.5em;
+  color: #555555;
+}
+
+.field{
+  margin: 1em 0;
+  font-size: 1.5em;
+}
+
+.field input{
+  border-radius: 0.2em;
+}
+
+.search-form{
+  border: none;
+  color:rgb(73, 73, 73);
+  font-size: 0.8em;
+}
+
+input[type=text], input[type=password],input[type=email]{
+  width: 100%;
+  padding: 1em;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(126, 185, 240);
+  box-sizing: border-box;
+}
+input[type=date]{
+  width: 30%;
+  padding: 1em;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(126, 185, 240);
+  box-sizing: border-box;
+}
+
+.drop{
+  width: 100%;
+  padding: 1em;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(126, 185, 240);
+  box-sizing: border-box;
+
+}
+
+/* Explore section*/
+
+.explore {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 0.6em;
+  grid-column-gap: 0.6rem;
+  border-radius: 0.2em;
+}
+
+.card {
+  background-color: white;
+  margin: 1em;
+  border-radius: 0.6em;
+  box-shadow: 0 0 1em 0.2em #888888;
+  text-align: center;
+  position: relative;
+}
+
+.explorename{
+  font-size: 1.5em;
+  color: #0b4dad;
+}
+
+.roomlistpreview{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.adv-img{
+  width: 100%;
+}
+
+.book{
+  border: solid #0562e8 1px;
+  border-radius: 0.2em;
+  margin: 1em;
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+}
+
+.book:hover{
+  background-color: #0562e8;
+  color: white;
+}
+
+/* home listing */
+
+.title{
+  font-size: 1.7em;
+  margin: 1em 2em;
+}
+
+.listorder{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.price h4{
+  margin: 0;
+  font-size: 1.5em;
+  color: #333333;
+}
+
+.price p{
+  margin:0;
+}
+.note1{
+  color: #555555;
+  font-size: 1em;
+  border-bottom: #777777 solid 1px;
+  margin: 0 5em;
+}
+.note2{
+  color: #555555;
+  font-size: 1.5em;
+  margin: 1em 3.2em;
+
+}
+
+@media (max-width: 888px){
+  .listorder{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .topbar{
+    font-size: 0.7em;
+  }
+
+  main{
+    margin-top: 7em;
+  }
+  .foot{
+    grid-template-columns: 4fr 1fr 2fr 2fr;
+    font-size:0.7em;
+  }
+  .field{
+    font-size: 1em;
+  }
+  .heading{
+    font-size: 1em;
+  }
+  .roomlistpreview{
+    grid-template-columns:1fr 1fr;
+  }
+  .container{
+    padding: 1.5em;
+    top: 4em;
+    left: 5em;
+    width: 25em ;
+  }
+
+}
+@media (max-width: 600px){
+  .listorder{
+    grid-template-columns:1fr;
+  }
+
+  .topbar{
+    font-size: 0.5em;
+  }
+  .foot{
+    grid-template-columns: 4fr 1fr 2fr 2fr;
+    font-size:0.5em;
+  }
+  .signup{
+    margin: 3em;
+  }
+  .container{
+    padding: 1em;
+    top: 3em;
+    left: 4em;
+    width: 20em ;
+  }
+  
+
+
+
+}
+
+ @media (max-width: 425px){
+  .topnav{
+    display: none;
+  }
+  .roomlistpreview{
+    grid-template-columns:1fr;
+  }
+  .explore {
+    grid-template-columns: 1fr;
+
+  }
+  .container{
+    padding: 0.7em;
+    top: 1em;
+    left: 1em;
+    width: 20em ;
+  }
+
+
+} 
+
+.errors
+{
+    color:#f00;
+}
