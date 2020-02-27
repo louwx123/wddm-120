@@ -4,6 +4,9 @@ const exphbs  = require('express-handlebars');
 const bodyParser = require('body-parser')
 const app = express();
 
+const productModel = require("./models/products");
+
+
 app.use(express.static('public'))
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -23,6 +26,8 @@ app.get("/",(req,res)=>{
 app.get("/room-listing",(req,res)=>{
     res.render("roomListing",{
         title: "Room Lsting",
+        products : productModel.getallProducts()
+
 
     });
 });
@@ -101,7 +106,8 @@ app.post("/validation-registration", (req,res)=>{
 
 
 
-const PORT=3000;
-app.listen(3000,()=>{
-    console.log(`Web Server connected!!!`);
-})
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT , ()=>{
+  
+      console.log(`Web Server is up and running`);
+  })
