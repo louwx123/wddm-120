@@ -7,6 +7,7 @@ const app = express();
 const productModel = require("./models/products");
 
 
+
 app.use(express.static('public'))
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -20,6 +21,8 @@ app.get("/",(req,res)=>{
     res.render("home",{
         title: "AirPnP",
         headingInfo : "Home Page",
+        products : productModel.getallProducts()
+
     })
 });
 

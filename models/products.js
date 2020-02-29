@@ -1,4 +1,4 @@
-const prouduct =
+const prouducts =
 {
 
     fakeDB : [],
@@ -16,7 +16,7 @@ const prouduct =
 
         this.fakeDB.push({id:`5`,title:'Earthship Escape',description:`2 guests • 1 bedroom • 1 bed • 1.5 bath • Hot tub • Wifi • Kitchen • free parking`,type:`ENTIRE HOUSE`,price:`156`,rate:`4.2/5`,image:`/images/room6.jpg`});
 
-        this.fakeDB.push({id:`6`,title:'Telfer',description:`2 guests • Studio • 1 bed • 1 bath • Hot tub • Wifi • Kitchen •free parking`,type:`ENTIRE APARTMENT`,price:`257`,rate:`4.6/5`,image:`/images/room7.jpg`});
+        this.fakeDB.push({id:`6`,title:'Telfer',description:`2 guests • Studio • 1 bed • 1 bath • Hot tub • Wifi • Kitchen •free parking`,type:`ENTIRE APARTMENT`,price:`257`,rate:`4.6/5`,image:`/images/room8.jpg`});
     
 
     },
@@ -28,5 +28,5 @@ const prouduct =
 }
 
 
-prouduct.init();
-module.exports=prouduct;
+prouducts.init();
+module.exports=prouducts;
