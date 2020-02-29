@@ -259,6 +259,22 @@ input[type=date]{
   background-color: #0562e8;
   color: white;
 }
+.card-image{
+  width: 100%;
+}
+.card-title{
+  font-size: 2em;
+  margin:0.2;
+}
+.card-type{
+  font-size: 1.5em;
+  color: darkgray;
+  margin: 0.2;
+}
+.card-price{
+  font-size: 1.5em;
+}
+
 
 /* home listing */
 
@@ -271,6 +287,8 @@ input[type=date]{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+
 .price h4{
   margin: 0;
   font-size: 1.5em;

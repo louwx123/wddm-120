@@ -42,66 +42,38 @@
 
 <section>
   <div class="part">
-      <h1>Room Promotion--UP to 30% off</h1>
+      <h1>Feature Room</h1>
   </div>
+  <div  class="listorder">
 
-<div class="roomlistpreview" >
-  <section class="card">
-  <div class="adv-img">
-    <img src="images/room2.jpg" alt="Room1" width="100%" >
-  </div>
-    <div>
-      <h2><strong>Full Studio Suite #3 - The Lake at Blue Mountains</strong></h2>
-      <p><del>Price: $168/night</del></p>
-      <p>Price: $102/night</p>
-      <p>Rating: 4.88/5 (35)</p>
-      <input type="button" class="book" id="book" value="BOOK NOW">
+    {{#each products}}
+
+      <div class="card">
+        <img src="{{this.image}}" alt="room image" class="card-image">    
+        <p class="card-type">
+          {{this.type}}
+        </p>
+        <p class="card-title">
+          {{this.title}}
+        </p>
+        <p class="card-description">
+          {{this.description}}
+        </p>
+        <p class="card-price">
+          Price : ${{this.price}}
+        </p>
+        <p class="card-rate">
+          Rate : {{this.rate}}
+        </p>
+        <input type="button" value="BOOK NOW" class="book">
+
+
       </div>
-  </section>
 
-  <section class="card">
-  <div class="adv-img">
-    <img src="images/room3.jpg" alt="Room2" width="100%" >
-  </div>
-    <div>
-      <h2><strong>Tiny Home Tranquility at Blue Mountains</strong></h2>
-      <p><del>Price: $204/night</del></p>
-      <p>Price: $269/night</p>
+    {{/each}}
+        
+   </div>
 
-      <p>Rating: 3.99/5 (98)</p>
-      <input type="button" class="book" id="book" value="BOOK NOW">
-      </div>
-  </section>
-
-
-    <section class="card">
-  <div class="adv-img">
-    <img src="images/room4.jpg" alt="Room3" width="100%" >
-  </div>
-    <div>
-      <h2><strong>Creekside Studio at Blue Mtn. and Dog Friendly</strong></h2>
-      <p><del>Price: $125/night</del></p>
-      <p>Price: $98/night</p>
-      <p>Rating: 4.45/5 (67)</p>
-      <input type="button" class="book" id="book" value="BOOK NOW">
-      </div>
-  </section>
-
-
-    <section class="card">
-  <div class="adv-img">
-    <img src="images/room5.jpg" alt="Room4" width="100%" >
-  </div>
-    <div>
-      <h2><strong>Mountain Access Studio Gataway-ski-in-ski-out</strong></h2>
-      <p><del>Price: $266/night</del></p>
-      <p>Price: $205/night</p>
-      <p>Rating: 4.12/5 (156)</p>
-      <input type="button" class="book" id="book" value="BOOK NOW">
-      </div>
-  </section>
-
-  </div>
 </section>
 
 <section>
