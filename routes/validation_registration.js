@@ -1,7 +1,11 @@
 const express = require("express"); 
 const router = express.Router();
-const bodyParser = require('body-parser')
-router.use(bodyParser.urlencoded({ extended: false }))
+const bodyParser = require('body-parser');
+router.use(bodyParser.urlencoded({ extended: false }));
+//load environment variable
+require('dotenv').config({path:"./config/keys.env"});
+
+
 router.post("/", (req,res)=>{
     
   const errors=[];
@@ -39,7 +43,7 @@ router.post("/", (req,res)=>{
   })
   }else{
     const sgMail = require('@sendgrid/mail');
-    sgMail.setApiKey('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');
+    sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
     const msg = {
       to: req.body.email,
       from: 'louwx@my.yorku.ca',
@@ -50,7 +54,7 @@ router.post("/", (req,res)=>{
     sgMail.send(msg);
 
     const accountSid = 'AC884e7df64033bb9277e31e4f922964ac';
-  const authToken = '30dbb86e83da55f9e6508925f0d44e23';
+  const authToken = process.env.TWILIO_AUTHTOKEN;
   const client = require('twilio')(accountSid, authToken);
 
   client.messages
@@ -60,6 +64,8 @@ router.post("/", (req,res)=>{
       to: req.body.phoneNumber
     })
     .then(message => console.log(message.sid));
+
+    res.redirect('/');
     }
 });
 

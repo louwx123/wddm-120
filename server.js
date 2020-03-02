@@ -9,11 +9,18 @@ const home = require('./routes/home');
 const login = require('./routes/login');
 const registration = require('./routes/registration');
 const roomlisting = require('./routes/roomlisting');
+const validation_login=require('./routes/validation_login')
+const validation_registration=require('./routes/validation_registration')
+
 
 app.use('/', home);
 app.use('/signinpage', login);
 app.use('/registrationpage', registration);
 app.use('/roomlisting', roomlisting);
+app.use('/validation_login', validation_login);
+app.use('/validation_registration', validation_registration);
+
+
 
 
 app.use(express.static('public'))
