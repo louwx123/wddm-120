@@ -2,14 +2,14 @@
   <h1>Login your Account</h1>
   <br>
 
-<form class="logintext" action="/signinpage" method="POST">
+<form class="logintext" action="/validation_login" method="POST">
    <div>{{#each messages}}
     <div class="errors">{{this}}</div>
     {{/each}}
   </div>
-    <label for="logname"><b>Email</b></label>
-    <input type="email" name="logname" placeholder="Email Address">
-    <label for="logpass"><b>Password</b></label>
+    <label><b>Email</b></label>
+    <input type="email" name="email" placeholder="Email Address">
+    <label><b>Password</b></label>
     <input type="password" name="logpass" placeholder="Password">
     <br>
     <br>

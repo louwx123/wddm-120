@@ -8,21 +8,21 @@ router.get('/',(req,res)=>{
   })
 })
 
-router.post("/", (req,res)=>{
+// router.post("/", (req,res)=>{
 
-  const errors=[];
+//   const errors=[];
 
-  if(req.body.logname == ""){
-      errors.push("Please enter your Email."); 
-  }
-  if(req.body.logpass == ""){
-      errors.push("Please enter your password.");
-  }
-  if(errors.length > 0 )
-  {
-  res.render("login",{
-      messages:errors
-  })
-}
-});
+//   if(req.body.logname == ""){
+//       errors.push("Please enter your Email."); 
+//   }
+//   if(req.body.logpass == ""){
+//       errors.push("Please enter your password.");
+//   }
+//   if(errors.length > 0 )
+//   {
+//   res.render("login",{
+//       messages:errors
+//   })
+// }
+// });
 module.exports = router ;
