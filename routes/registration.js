@@ -43,6 +43,17 @@ router.post("/", (req,res)=>{
       messages:errors
   })
 }
+
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey("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");
+const msg = {
+  to: 'peterlou96@gmail.com',
+  from: '',
+  subject: 'Sending with Twilio SendGrid is Fun',
+  text: 'and easy to do anywhere, even with Node.js',
+  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+};
+sgMail.send(msg);
 });
 
 

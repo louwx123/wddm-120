@@ -4,7 +4,7 @@ const client = require('twilio')(accountSid, authToken);
 
 client.messages
   .create({
-     body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+     body: 'Welcome to AirPnP',
      from: '+14043692027',
      to: '+14169964509'
    })
