@@ -1,6 +1,9 @@
 const express = require("express"); 
 const router = express.Router();
 const bodyParser = require('body-parser');
+const userModel= require("../models/User");
+
+
 router.use(bodyParser.urlencoded({ extended: false }));
 //load environment variable
 require('dotenv').config({path:"./config/keys.env"});
@@ -42,6 +45,29 @@ router.post("/", (req,res)=>{
       messages:errors
   })
   }else{
+    const newUser = 
+    {
+      firstName:req.body.firstName,
+      lastName:req.body.lastName,
+      email:req.body.email,
+      password:req.body.pass
+    }
+
+    const user = new userModel(newUser);
+    user.save()
+    .then(()=>{
+      res.redirect('/roomlisting');
+
+    })
+    .catch(err=>console.log(`Error while inserting into the data${err}`))
+
+
+
+
+
+
+
+
     const sgMail = require('@sendgrid/mail');
     sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
     const msg = {
@@ -54,10 +80,10 @@ router.post("/", (req,res)=>{
     sgMail.send(msg);
 
     const accountSid = 'AC884e7df64033bb9277e31e4f922964ac';
-  const authToken = process.env.TWILIO_AUTHTOKEN;
-  const client = require('twilio')(accountSid, authToken);
+    const authToken = process.env.TWILIO_AUTHTOKEN;
+    const client = require('twilio')(accountSid, authToken);
 
-  client.messages
+    client.messages
     .create({
       body: 'Welcome to AirPnP',
       from: '+14043692027',
@@ -65,7 +91,6 @@ router.post("/", (req,res)=>{
     })
     .then(message => console.log(message.sid));
 
-    res.redirect('/');
     }
 });
 
