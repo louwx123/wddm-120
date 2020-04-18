@@ -16,13 +16,13 @@ router.post("/", (req,res)=>{
   if(req.body.email == ""){
       errors.push("Please enter your email address.");  
   }
-  if(req.body.pass == ""){
+  if(req.body.password == ""){
       errors.push("Please enter your password.");
   }
-  if(req.body.pass.length <6 ||req.body.pass.length>20){
+  if(req.body.password.length <6 ||req.body.password.length>20){
       errors.push("Password has to be 6-20 characters.");
   }
-  if(req.body.pass!=req.body.repass){
+  if(req.body.password!=req.body.repass){
       errors.push("Please enter same password twice.")
   }
 
@@ -50,7 +50,7 @@ router.post("/", (req,res)=>{
       firstName:req.body.firstName,
       lastName:req.body.lastName,
       email:req.body.email,
-      password:req.body.pass
+      password:req.body.password
     }
 
     const user = new userModel(newUser);

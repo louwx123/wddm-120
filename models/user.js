@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const bcrypt = require('bcryptjs');
 
 const userSchma = new Schema({
     firstName:{
@@ -34,6 +35,28 @@ const userSchma = new Schema({
 
 });
 
+
+userSchma.pre("save", function(next)
+{
+  bcrypt.genSalt(10)
+  .then((salt)=>
+  {
+    bcrypt.hash(this.password,salt)
+    .then((encryptPassword)=>{
+      this.password = encryptPassword;
+      next();
+
+
+
+    })
+    .catch(err=>console.log(`Error occured when hashing ${err}`));
+  })
+
+  .catch(err=>console.log(`Error occured when salting ${err}`))
+
+
+
+})
 const userModel = mongoose.model('User',userSchma);
 
 module.exports = userModel;
