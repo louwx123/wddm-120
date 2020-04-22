@@ -1,0 +1,24 @@
+ <h2>Update Room</h2>
+    <form method="POST" action="/editroom/update/{{_id}}?method=POST">
+
+
+        <label>Title</label>
+        <input type="text" name="title" id="title" value="{{title}}"> <br><br>
+
+        <label>Description</label>
+        <textarea id="description" name="description">{{description}}</textarea><br><br>
+
+        <label>Price</label>
+        <input type="number" name="price" id="price" value="{{price}}"> <br><br>
+
+        <label>Location</label>
+        <select name="location">
+            <option value="Toronto">Toronto</option>
+            <option value="Vancouver">Vancouver</option>
+            <option value="Montreal">Montreal</option>
+        </select>
+        <br \>
+        <input type="submit" value="Edit Room">
+
+    </form>
+

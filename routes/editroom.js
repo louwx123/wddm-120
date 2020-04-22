@@ -1,10 +1,10 @@
 const express = require("express"); 
-const productModel = require("../models/products.js");
 const router = express.Router();
-const roomsModel= require("../models/rooms");
+const isAuth = require("../middleware/auth")
 const isAdmin = require("../middleware/authorization")
+const roomsModel= require("../models/rooms");
 
-router.get('/',(req,res)=>{
+router.get('/',isAuth, (req,res)=>{
   roomsModel.find()
   .then((rooms)=>{
 
@@ -28,7 +28,7 @@ router.get('/',(req,res)=>{
       });
 
 
-      res.render("roomlisting",{
+      res.render("editroom",{
          data : filteredTask
       });
 
@@ -39,26 +39,41 @@ router.get('/',(req,res)=>{
   
 })
 
-router.get("/:id",(req,res)=>{
+router.get("/edit/:id",(req,res)=>{
 
   roomsModel.findById(req.params.id)
   .then((rooms)=>{
 
-      const {_id,title,description,dueDate,priority,status} = rooms;
-      res.render("Task/taskEditForm",{
+      const {_id,title,description,price,location} = rooms;
+      res.render("roomListingUpdate",{
           _id,
           title,
           description,
-          dueDate,
-          priority,
-          status  
+          price,
+          location
       })
 
   })
   .catch(err=>console.log(`Error happened when pulling from the database :${err}`));
 
-
 })
 
-module.exports = router;
+router.post("/update/:id",(req,res)=>{
 
+  const rooms =
+  {
+      title:req.body.title,
+      description:req.body.description,
+      price:req.body.price,
+      location:req.body.location,
+  }
+
+  roomsModel.updateOne({_id:req.params.id},rooms)
+  .then(()=>{
+      res.redirect("/roomlisting");
+  })
+  .catch(err=>console.log(`Error happened when updating data from the database :${err}`));
+
+
+});
+module.exports = router;

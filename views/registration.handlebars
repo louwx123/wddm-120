@@ -8,7 +8,7 @@
   </div>
   <br>
   <br>
-  <form class="logintext" action="/validation_registration" method="post">
+  <form class="logintext" action="/validation_registration" method="post" enctype="multipart/form-data">
     <label>Email Address</label>
     <input type="email" name="email" placeholder="Email Address">
     <label>Password(6-20 characters)</label>
@@ -23,6 +23,9 @@
     <input type="text" name="phoneNumber" placeholder="Phone Number">
     <label>Birthday</label>
     <input type="date" name="birthday" placeholder="Birthday">
+    <br />
+    <label>File Upload</label>
+    <input type="file" name="profilePic" id="profilePic">
     <br>
     <br>
     <br>

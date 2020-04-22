@@ -1,9 +1,6 @@
+
 <section>
-    <h1 class="title">Rooms listing</h1>
-    <p class="note1">Additional fees apply. Taxes may be added</p>
-    <h2 class="note2">
-        300+ places to stay
-    </h2>
+
     <div class="listorder">
 
         {{#each data}}
@@ -22,7 +19,9 @@
                 <p class="card-rate">
                 Rate : {{this.rate}}
                 </p>
-                <input type="button" value="BOOK NOW" class="book">
+                
+                <a href="/editroom/edit/{{this.id}}"><input type="button" value="Edit" class="book"></a>
+
 
             </div>
         {{/each}}

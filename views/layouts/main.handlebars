@@ -17,21 +17,28 @@
 
       <ul class="topnav">
           <li><a href="#">Become host</a></li>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">About Us</a></li>
+          {{#if user }}
+          <li><a href="/addrooms">Add Room</a></li>
+          
+          {{/if}}
+          <li><a href="/userDashboard">Dashboard</a></li>
+
           <li><a href="/roomlisting">Room listing</a></li>
       </ul>
 
       <div class="btnlist">
         <ul>
+          {{#if user}}
+          <li><a href="/logout">Logout</a></li>
+          {{else}}
           <a href="/signinpage"><li><button>Login</button></li></a>
+          {{/if}}
           <a href="/registrationpage"><li><button>SignUp</button></li></a>
         </ul>   
       </div>
     </div>
   </header>
     <main>
-    
     {{{body}}}    
     </main>
     <footer class="foot">

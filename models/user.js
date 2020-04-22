@@ -23,6 +23,11 @@ const userSchma = new Schema({
       type:String,
       required: true
     },
+    type:
+    {
+        type:String,
+        default:"User"
+    },
     profilePic:{
       type:String,
     },

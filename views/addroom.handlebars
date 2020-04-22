@@ -1,0 +1,26 @@
+    <h2>Add Rooms</h2>
+    
+    <form method="POST" action="/add_rooms" enctype="multipart/form-data">
+
+        <label>Title</label>
+        <input type="text" name="title" id="title"> <br><br>
+
+        <label>Description</label>
+        <textarea id="description" name="description"></textarea><br><br>
+
+        <label>Price</label>
+        <input type="number" name="price" id="price"> <br><br>
+
+        <label>Location</label>
+        <select name="location">
+            <option value="Toronto">Toronto</option>
+            <option value="Vancouver">Vancouver</option>
+            <option value="Montreal">Montreal</option>
+        </select>
+        <br \>
+    <label>File Upload</label>
+    <input type="file" name="roomPic" id="roomPic">
+<br><br>
+        <input type="submit" value="Add Room">
+
+    </form>

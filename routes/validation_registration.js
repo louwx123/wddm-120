@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bodyParser = require('body-parser');
 const userModel= require("../models/User");
-
+const path = require("path");
 
 router.use(bodyParser.urlencoded({ extended: false }));
 //load environment variable
@@ -55,11 +55,23 @@ router.post("/", (req,res)=>{
 
     const user = new userModel(newUser);
     user.save()
-    .then(()=>{
-      res.redirect('/roomlisting');
+    .then((user)=>{
+      req.files.profilePic.name = `pro_pic_${user._id}${path.parse(req.files.profilePic.name).ext}`
+      req.files.profilePic.mv(`public/uploads/${req.files.profilePic.name}`)
+      .then(()=>{
+        userModel.update({_id:user._id}, {
+          profilePic: req.files.profilePic.name
+        })
+        .then(()=>{
+          res.redirect('signinpage');
+        })
+      })
 
     })
-    .catch(err=>console.log(`Error while inserting into the data${err}`))
+    .catch(()=>{
+      res.redirect('signinpage');
+
+    })
 
 
 
