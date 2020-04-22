@@ -9,7 +9,7 @@ const isAdmin = require("../middleware/authorization")
 router.use(bodyParser.urlencoded({ extended: false }))
 
 
-router.post("/", isAuth, isAdmin, (req,res)=>{
+router.post("/", isAuth, (req,res)=>{
   const newRoom  = 
     {
       title:req.body.title,
