@@ -22,7 +22,5 @@
     "mongoose": "^5.9.7",
     "twilio": "^3.39.5"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  }
+  "devDependencies": {}
 }
